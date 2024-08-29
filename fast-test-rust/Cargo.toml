@@ -1,0 +1,8 @@
+[package]
+name = "fast-test-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.39.3", features = ["rt", "rt-multi-thread", "macros"] }
+warp = "0.3.7"
