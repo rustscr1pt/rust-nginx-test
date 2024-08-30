@@ -3,13 +3,11 @@ services:
     build: ./fast-test-rust
     container_name: rust-warp
     restart: unless-stopped
-  nginx:
-    image: nginx:latest
+  rust-warp-nginx:
+    build: ./nginx
     container_name: rust-warp-nginx
     restart: unless-stopped
     ports:
       - "80:80"
-    volumes:
-      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
     depends_on:
       - rust-warp
